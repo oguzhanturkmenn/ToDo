@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My ToDo</string>
+
+    <string name="text_me">Text Me Title…</string>
+    <string name="text_me_note">Text Me Note…</string>
+
+    <string name="notification_title">Note Reminder</string>
+    <string name="notification_subtitle">You got something TODO!</string>
+    <string name="notification_schedule_title">Schedule notification:\u00a0</string>
+    <string name="notification_schedule_pattern">dd.MM.yy \u00B7 HH:mm</string>
+</resources>

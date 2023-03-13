@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/note_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/allNoteFragment"
+        android:name="com.oguzhanturkmen.mytodoreal.ui.note.AllNoteFragment"
+        android:label="My ToDo"
+        tools:layout="@layout/fragment_all_note">
+        <action
+            android:id="@+id/action_allNoteFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_allNoteFragment_to_updateFragment"
+            app:destination="@id/updateFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="data"
+            app:argType="com.oguzhanturkmen.mytodoreal.data.entity.NoteData"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.oguzhanturkmen.mytodoreal.ui.addnote.AddNoteFragment"
+        android:label="Add ToDo"
+        tools:layout="@layout/fragment_add_note">
+        <action
+            android:id="@+id/action_addNoteFragment_to_allNoteFragment"
+            app:destination="@id/allNoteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.oguzhanturkmen.mytodoreal.ui.update.UpdateFragment"
+        android:label="Update ToDo"
+        tools:layout="@layout/fragment_update">
+        <action
+            android:id="@+id/action_updateFragment_to_allNoteFragment"
+            app:destination="@id/allNoteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="data"
+            app:argType="com.oguzhanturkmen.mytodoreal.data.entity.NoteData"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.oguzhanturkmen.mytodoreal.ui.notification.NotificationFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_notification">
+        <action
+            android:id="@+id/action_notificationFragment_to_allNoteFragment"
+            app:destination="@id/allNoteFragment" />
+        <argument
+            android:name="notidata"
+            app:argType="com.oguzhanturkmen.mytodoreal.data.entity.NoteData" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.oguzhanturkmen.mytodoreal.ui.start.StartFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_allNoteFragment"
+            app:destination="@id/allNoteFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

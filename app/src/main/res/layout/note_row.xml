@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="not"
+            type="com.oguzhanturkmen.mytodoreal.data.entity.NoteData" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_white"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/white"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvNoteTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="200"
+                        android:text="@{not.note_title}"
+                        android:layout_marginTop="-5dp"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/ib_color"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvNoteBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxHeight="170dp"
+                    android:text="@{not.note_body}"
+                    android:textColor="@color/hintColor"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvNoteDate"
+                    android:layout_width="76dp"
+                    android:layout_height="17dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="end"
+                    android:text="@{not.note_date}" />
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

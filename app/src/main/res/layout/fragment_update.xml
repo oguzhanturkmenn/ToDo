@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="not"
+            type="com.oguzhanturkmen.mytodoreal.data.entity.NoteData" />
+
+        <variable
+            name="updateFragment"
+            type="com.oguzhanturkmen.mytodoreal.ui.update.UpdateFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF3D00"
+        tools:context=".ui.update.UpdateFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:background="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <EditText
+                        android:id="@+id/etNoteTitleUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:hint="@string/text_me"
+                        android:inputType="text"
+                        android:text="@{not.note_title}"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etNoteBodyUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="@string/text_me"
+                        android:inputType="textMultiLine"
+                        android:text="@{not.note_body}"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hintColor"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/colorAccent"
+            android:clickable="true"
+            android:onClick="@{()-> updateFragment.fabDoneClicked(not.note_id,etNoteTitleUpdate.getText().toString(),etNoteBodyUpdate.getText().toString(),not.note_date)}"
+            android:src="@drawable/ic_done"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
