@@ -34,4 +34,4 @@ The app uses Hilt for dependency injection and Jetpack Navigation for navigation
 Overall, the app follows the best practices and guidelines of modern Android app development and demonstrates the use of popular Android libraries and technologies.
 </h4>
 
-<img src="https://user-images.githubusercontent.com/96176710/224835897-f3b0bef3-6d35-4073-83f0-e080843802f2.gif" width="300" height="650">
+![mytodo_AdobeExpress](https://user-images.githubusercontent.com/96176710/224837705-66ff1399-1a81-4394-a983-22f9fc2ee4c9.gif)
